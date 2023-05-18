@@ -6,9 +6,8 @@
  ************************************/
 const logger = function (array) {
     //console.log(logger[i]+1);
-    const logger = [100,20,53,35,25];
-    array.forEach((temprtre) => console.log {temperature})
-        
+    array.forEach ((temprtre) => console.log (temprtre)); 
+
     }
     //  logger.forEach((number) =>`${number} is a `) ;
 
@@ -38,11 +37,14 @@ return celsiusTemperatures;
  * - Returns an array of temperatures
  *   that exceed the threshhold
  ***************************************/
-const hottestDays = function (temperatures, threshhold)
-       const exceedingTemperatures = temperatures.filter((temperature) => temperature > threshhold);
+
+function getTemperaturesAboveThreshold(temperatures, threshold) {
+  return temperatures.filter(temp => temp > threshold);
+}
+       
       //  return exceedingTemperatures;
       
-      return exceedingTemperatures.;
+      return exceedingTemperatures;
       console.log(exceedingTemperatures);
 
 /******************************************
@@ -59,27 +61,28 @@ const hottestDays = function (temperatures, threshhold)
  * hint: you can combine
  *       all previous functions
  *******************************************/
-const hottestDays = function (temperatures, threshhold) {
-   
-        const exceedingTemperatures = temperatures.filter((temperature) => temperature > threshold);
-        return exceedingTemperatures;
-        
-      };
-      const temperatureArray = [80, 85, 90, 95, 100];
-const threshold = 90;
-const exceedingTemperatures = hottestDays(temperatureArray, threshold);
-console.log(exceedingTemperatures);
+function convertToFahrenheit(celsius) {
+  return (celsius * 9 / 5) + 32;
+}
 
-      
-const hottestDays = function (temperatures, threshold) {
-    const exceedingTemperatures = temperatures.filter((temperature) => temperature > threshold);
-    const celsiusTemperatures = toCelsius(exceedingTemperatures);
+function getTemperaturesAboveThreshold(temperatures, threshold) {
+  return temperatures.filter(temp => temp > threshold);
+}
+
+function convertToCelsius(fahrenheit) {
+  return (fahrenheit - 32) * 5 / 9;
+}
+
+function logHottestDays(temperatures, threshold) {
+  const temperaturesFahrenheit = temperatures.map(convertToFahrenheit);
+  const hotTemperaturesFahrenheit = getTemperaturesAboveThreshold(temperaturesFahrenheit, threshold);
+  const hotTemperaturesCelsius = hotTemperaturesFahrenheit.map(convertToCelsius);
+  hotTemperaturesCelsius.forEach(temp => console.log(temp));
+}
+
   
 
-  const temperatureArray = [80, 85, 90, 95, 100];
-const threshold = 90;
-logHottestDays(temperatureArray, threshold);
-};
+
   
 
 /* Uncomment the following lines to test your code... */
